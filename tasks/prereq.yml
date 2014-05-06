@@ -5,3 +5,6 @@
 
 - name: install tomcat
   apt: pkg=tomcat6 state=installed update_cache=yes
+
+- name: install curl
+  apt: pkg=curl state=installed update_cache=yes
