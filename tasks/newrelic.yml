@@ -7,7 +7,7 @@
 
 - file: >
     path="{{ newrelic_destination_path }}/newrelic" state=directory
-    owner='root' group='root' mode=0644 recurse=yes
+    owner='root' group='root' mode=0655 recurse=no
 
 - name: NewRelic JAR
   shell: >
@@ -17,7 +17,3 @@
   template: >
     src=newrelic.yml.j2 dest={{ newrelic_destination_path }}/newrelic/newrelic.yml
     owner='root' group='root' mode=0644
-
-- file: >
-    path="{{ newrelic_destination_path }}/newrelic" state=directory
-    owner='root' group="root" mode=0644 recurse=yes
