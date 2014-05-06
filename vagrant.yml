@@ -8,4 +8,5 @@
     - vars/newrelic.yml
 
   tasks:
+    - include: tasks/tomcat.yml
     - include: tasks/newrelic.yml

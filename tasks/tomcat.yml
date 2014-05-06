@@ -1,0 +1,7 @@
+---
+# Install Tomcat6
+#
+#
+
+- name: install jdk
+    apt: pkg=tomcat6 state=installed update_cache=yes
