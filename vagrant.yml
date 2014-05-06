@@ -1,0 +1,11 @@
+---
+# Elasticsearch Ansible Playbook
+- hosts: all
+  user: $user
+  sudo: yes
+
+  vars_files:
+    - vars/newrelic.yml
+
+  tasks:
+    - include: tasks/newrelic.yml

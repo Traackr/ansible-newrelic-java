@@ -1,0 +1,5 @@
+---
+# NewRelic Variables
+
+newrelic_license_key: 0083012db31fbed1d83253b46ba3f12ae4f7608f
+newrelic_destination_path: '/usr/share/tomcat6'

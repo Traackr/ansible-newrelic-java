@@ -1,0 +1,25 @@
+---
+# Install NewRelic
+#
+# newrelic:
+#  - { destination: '<path there newrelic.jar will be placed>' }
+#  - ...
+
+- file: >
+    path="{{ newrelic_destination_path }}/newrelic" state=directory
+    owner='root' group='root' mode=0644 recurse=yes
+
+- name: NewRelic JAR
+  action: >
+    uri url="http://apt.newrelic.com/newrelic/java-agent/newrelic-agent/3.6.0/newrelic-agent-3.6.0.jar" method=GET
+    dest="{{ newrelic_destination_path }}/newrelic/newrelic-agent.jar"
+    follow_redirects=yes
+
+- name: NewRelic Config
+  template: >
+    src=newrelic.yml.j2 dest="{{ newrelic_destination_path }}/newrelic/newrelic.yml
+    owner='root' group='root' mode=0644
+
+- file: >
+    path="{{ newrelic_destination_path }}/newrelic" state=directory
+    owner='root' group="root" mode=0644 recurse=yes
