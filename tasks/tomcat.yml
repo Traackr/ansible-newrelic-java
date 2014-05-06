@@ -3,5 +3,5 @@
 #
 #
 
-- name: install jdk
-    apt: pkg=tomcat6 state=installed update_cache=yes
+- name: install tomcat
+  apt: pkg=tomcat6 state=installed update_cache=yes
